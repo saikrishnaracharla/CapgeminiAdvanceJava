@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cart</title>
+</head>
+<body>
+<h2>Your Cart</h2>
+<th:block th:each="item : ${cartItems}">
+    <p th:text="'Name: ' + ${item.product.productName}"></p>
+    <p th:text="'Price: ' + ${item.product.productPrice}"></p>
+    <p th:text="'Quantity: ' + ${item.quantity}"></p>
+    <p th:text="'Total: ' + ${item.totalPrice}"></p>
+    <hr>
+</th:block>
+<h3 th:text="'Total Amount: ' + ${total}"></h3>
+<br>
+<a href="/products">Continue Shopping</a>
+<br>
+<a href="/">Home</a>
+</body>
+</html>
